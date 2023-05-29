@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "solc": "^0.8.16"
+  },
+  "scripts": {
+    "compile": "solcjs --bin --abi --include-path node_modules/ --base-path . -o ethers-simple-storage/scripts  ethers-simple-storage/SimpleStorage.sol"
   }
 }
