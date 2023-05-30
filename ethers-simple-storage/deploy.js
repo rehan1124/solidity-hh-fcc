@@ -30,13 +30,25 @@ async function main() {
   const contract = await contractFactory.deploy();
   const deploymentReceipt = await contract.deploymentTransaction().wait(1);
 
-  console.log("Here is the deployment transaction: ");
-  console.log(contract.deploymentTransaction);
+  // console.log("Here is the deployment transaction: ");
+  // console.log(contract.deploymentTransaction);
 
-  console.log("Here is the transaction receipt: ");
-  console.log(deploymentReceipt);
+  // console.log("Here is the transaction receipt: ");
+  // console.log(deploymentReceipt);
 
   console.log("--- Deployment completed! ---");
+
+  // --- Methods from contract ---
+  console.log(
+    "--- Read and store favorite numbers from/to contract deployed ---"
+  );
+  const fvNumber = await contract.retrieve();
+  console.log(`Current favorite number: ${fvNumber}`);
+
+  const storeResponse = await contract.store("7");
+  // console.log(storeResponse);
+  const fvNumberUpdated = await contract.retrieve();
+  console.log(`New favorite number after updating: ${fvNumberUpdated}`);
 }
 
 main()
