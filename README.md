@@ -31,7 +31,7 @@ cd ethers-simple-storage
 solcjs --bin --abi --include-path node_modules/ --base-path . -o . SimpleStorage.sol
 ```
 
-- To deploy contract on Ganache network, execute command as list below.
+- To deploy contract on Ganache network, execute command as listed below.
 
 ```
 cd ethers-simple-storage

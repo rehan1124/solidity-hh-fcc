@@ -40,7 +40,7 @@ async function main() {
 
   // --- Methods from contract ---
   console.log(
-    "--- Read and store favorite numbers from/to contract deployed ---"
+    "--- Let's do some TESTING. Read and store favorite numbers from/to contract deployed. ---"
   );
   const fvNumber = await contract.retrieve();
   console.log(`Current favorite number: ${fvNumber}`);
