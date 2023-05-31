@@ -33,8 +33,8 @@ async function main() {
   // console.log("Here is the deployment transaction: ");
   // console.log(contract.deploymentTransaction);
 
-  // console.log("Here is the transaction receipt: ");
-  // console.log(deploymentReceipt);
+  console.log("Here is the transaction receipt: ");
+  console.log(deploymentReceipt);
 
   console.log("--- Deployment completed! ---");
 
@@ -45,8 +45,10 @@ async function main() {
   const fvNumber = await contract.retrieve();
   console.log(`Current favorite number: ${fvNumber}`);
 
-  const storeResponse = await contract.store("7");
-  // console.log(storeResponse);
+  const storeResponse = await contract.store(7);
+  const storeResponseReceipt = await storeResponse.wait(1);
+  console.log("Store response receipt:");
+  console.log(storeResponseReceipt);
   const fvNumberUpdated = await contract.retrieve();
   console.log(`New favorite number after updating: ${fvNumberUpdated}`);
 }
